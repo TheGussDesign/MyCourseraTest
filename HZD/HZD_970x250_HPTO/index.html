@@ -669,6 +669,16 @@
       width: 283px;
       overflow: hidden;
     }
+	  .centerBanner{
+		  position: absolute;
+		  top: 11px;
+		  left: 263px;		  
+	  }	  
+	  .skin{
+		  background: url(HZD_01Skins.jpg) 0px -114px;
+		  width: 1500px;
+		  height: 900px;
+	  }
   </style>
   <script>
     EBModulesToLoad = ['EBCMD'];
@@ -699,8 +709,9 @@
 </head>
 
 <body class="document-body">
+ <div class="skin">
   <gwd-genericad id="gwd-ad">
-    <div is="gwd-pagedeck" class="gwd-page-container" id="pagedeck" default-page="banner-page" data-gwd-offset-top="0px" data-gwd-offset-left="3px">
+    <div is="gwd-pagedeck" class="gwd-page-container centerBanner" id="pagedeck" default-page="banner-page" data-gwd-offset-top="0px" data-gwd-offset-left="3px">
       <div is="gwd-page" id="banner-page" data-gwd-name="Banner page" class="gwd-page-wrapper banner gwd-lightbox gwd-div-agfs" data-gwd-width="970px" data-gwd-height="250px">
         <div class="gwd-page-content banner">
           <div class="gwd-div-o2ui" id="BG_all">
@@ -709,7 +720,7 @@
               <img is="gwd-image" source="assets/bgGUIDE.jpg" id="guide_" class="gwd-img-hep6">
             </div>
             <div class="gwd-div-ohu4">
-              <video is="gwd-video" id="TT_VIDEO" sources="assets/bgVideo.mp4" class="gwd-video-19cc" muted="" autoplay=""></video>
+              <video is="gwd-video" id="TT_VIDEO" sources="assets/bgVideo.mp4" class="gwd-video-19cc" muted autoplay></video>
             </div>
           </div>
           <img is="gwd-image" source="assets/packShadow.png" id="pack_shadow" class="gwd-img-srem">
@@ -800,6 +811,7 @@
       </div>
     </div>
   </gwd-genericad>
+	</div><!-- div skins -->
   <script type="text/javascript" gwd-events="registration">
     // Support code for event handling in Google Web Designer
      // This script block is auto-generated. Please do not edit!

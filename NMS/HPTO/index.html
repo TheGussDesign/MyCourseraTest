@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <title>Expand Composition</title>
+        <script type="text/javascript">
+            EBModulesToLoad = ['Video'];
+        </script>
+    <script type="text/javascript" src="https://secure-ds.serving-sys.com/BurstingScript/EBLoader.js"></script>
+    <!--Adobe Edge Runtime-->
+    <script type="text/javascript" charset="utf-8" src="edge_includes/edge.min.js"></script>
+    <style>
+        .edgeLoad-collapse, .edgeLoad-expand {
+            visibility: hidden;
+        }
+
+        .expand, .collapse {
+            position: absolute !important;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .collapse {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        #remarketing-pixels, #remarketing-pixels > img {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+        }
+
+        *:not(input) {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        *::selection {
+            background-color: transparent;
+        }
+
+        *::-moz-selection {
+            background-color: transparent;
+        }
+		.wrapper{
+			width: 1800px;
+			height: 600px;
+			background: url(VideoSkin_GlobalNav_Mar2014.jpg) 0 0 no-repeat;
+		}
+		.centerBanner{
+			position: absolute;
+			top: 20px;
+			left: 420px;
+			
+		}
+    </style>
+    <script>
+
+        var collapseLoaded = false;
+        var expandLoaded = false;
+        var expanded = false;
+
+        function transformEdgeDOM(node)
+        {
+            if (node.type == 'video')
+            {
+                node.preload = 'metadata';
+            }
+        }
+
+        AdobeEdge.bootstrapCallback(function (compId)
+        {
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function (event)
+        {
+            setRemarketingPixel(undefined);
+
+            if (!EB.isInitialized())
+                EB.addEventListener(EBG.EventName.EB_INITIALIZED, start);
+            else
+                start();
+        });
+
+        function start()
+        {
+            AdobeEdge.loadComposition("collapse","collapse",{
+transformDOM: function(node) { if('transformEdgeDOM' in window) window.transformEdgeDOM(node, "collapse"); },
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "970px",
+    height: "250px"
+}, {
+    dom: [
+        {
+            id: 'background',
+            type: 'image',
+            tag: 'img',
+            rect: ['0px', '0px', '970px', '250px', 'auto', 'auto'],
+            fill: ["rgba(0,0,0,0)",'images/background_collapse.jpg','0px','0px']
+        },
+        {
+            id: 'NMS_Loader_anim',
+            type: 'image',
+            tag: 'img',
+            rect: ['475px', '150px', '20px', '20px', 'auto', 'auto'],
+            fill: ["rgba(0,0,0,0)",'images/NMS_Loader_anim.gif','0px','0px']
+        },
+        {
+            id: 'logo_preload',
+            type: 'image',
+            tag: 'img',
+            rect: ['291px', '96px', '387px', '38px', 'auto', 'auto'],
+            fill: ["rgba(0,0,0,0)",'images/logo_preload.png','0px','0px']
+        },
+        {
+            id: 'ps4_label',
+            type: 'image',
+            tag: 'img',
+            rect: ['0px', '0px', '133px', '42px', 'auto', 'auto'],
+            fill: ["rgba(0,0,0,0)",'images/ps4_label.png','0px','0px']
+        }
+    ],
+    style: {
+        '${symbolSelector}': {
+            isStage: true,
+            rect: [undefined, undefined, '970px', '250px']
+        }
+    }
+}, {
+    dom: [
+
+    ],
+    style: {
+        '${symbolSelector}': {
+            isStage: true,
+            rect: [undefined, undefined, '300px', '250px'],
+            fill: ["rgba(255,255,255,1)"]
+        }
+    }
+});
+
+            document.getElementById('collapse').addEventListener('click', collapseClick);
+            document.getElementById('expand').addEventListener('click', expandClick);
+
+            EB.initExpansionParams(0, 0, 970, 500);
+        }
+
+        function collapseClick()
+        {
+            requestExpand();
+        }
+
+        function expandClick()
+        {
+            requestExit();
+        }
+
+        function requestExpand()
+        {
+            if (expanded || !('controller' in AdobeEdge.getComposition('collapse')))
+                return;
+
+            EB.expand();
+            expandStart();
+        }
+
+        function requestCollapse()
+        {
+            if (!expanded)
+                return;
+
+            EB.collapse();
+            collapseStart();
+        }
+
+        function requestExit()
+        {
+            EB.clickthrough('Exit_Click');
+            exit();
+        }
+
+        function requestClose()
+        {
+            if (expanded)
+                AdobeEdge.getComposition(expanded ? 'expand' : 'collapse').controller.freeze();
+
+            requestCollapse();
+        }
+
+        function expandStart()
+        {
+            if (!expandLoaded)
+            {
+                expandLoaded = true;
+
+                AdobeEdge.loadComposition("expand","expand",{
+transformDOM: function(node) { if('transformEdgeDOM' in window) window.transformEdgeDOM(node, "expand"); },
+    scaleToFit: "none",
+    centerStage: "none",
+    minW: "0px",
+    maxW: "undefined",
+    width: "970px",
+    height: "500px"
+}, {dom: [ ]}, {dom: [ ]});
+            }
+            else
+            {
+                AdobeEdge.getComposition('expand').controller.rePlay();
+            }
+
+            AdobeEdge.getComposition('collapse').controller.freeze();
+            document.getElementById('collapse').style.display = 'none';
+            document.getElementById('expand').style.display = 'block';
+
+            expandFinish();
+        }
+
+        function expandFinish()
+        {
+            expanded = true;
+        }
+
+        function collapseStart()
+        {
+            try
+            {
+                document.getElementById('expand').style.display = 'none';
+                document.getElementById('collapse').style.display = 'block';
+
+                var controller = AdobeEdge.getComposition('expand').controller;
+                if ('collapseStart' in controller)
+                    controller.collapseStart();
+            }
+            catch (error)
+            {
+
+            }
+
+            collapseFinish();
+        }
+
+        function collapseFinish()
+        {
+            expanded = false;
+        }
+
+        function exit()
+        {
+            setRemarketingPixel(undefined);
+            requestCollapse();
+        }
+
+
+        function setRemarketingPixel(src)
+        {
+            src = src || '';
+            var srcs = src.split(' ');
+            document.getElementById('remarketing-pixels').innerHTML = '';
+            for (var i = 0; i < srcs.length; i++)
+            {
+                var s = srcs[i].trim();
+                if (s == '') continue;
+                var img = document.createElement('img');
+                img.src = applyTimestamp(s);
+                document.getElementById('remarketing-pixels').appendChild(img);
+            }
+        }
+
+        function applyTimestamp(s)
+        {
+            return s.replace('[timestamp]', new Date().getTime().toString());
+        }
+
+        function getExitURL()
+        {
+            var url = undefined;
+            if (url && url.trim() != '')
+            {
+                return applyTimestamp(url.trim());
+            }
+            return null;
+        }
+
+    </script>
+    <!--Adobe Edge Runtime End-->
+
+</head>
+<body style="margin:0;padding:0;">
+<div id="remarketing-pixels"></div>
+<div class="wrapper">
+<div class="centerBanner">
+<div id="collapse" class="collapse">
+</div>
+<div id="expand" class="expand">
+</div>
+	</div>
+	</div>
+</body>
+</html>

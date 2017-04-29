@@ -1,0 +1,305 @@
+/* ===================== */ 
+/* === Z-INDEX 'KEY' === */ 
+ BUTTONS	: 800	
+ EXITS		: 700	
+ VIDEOS		: 600	
+ CONTAINERS	: 500	
+ CONTENT	: 1-400	
+/* ===================== */ 
+
+/* === MAIN ELEMENTS === */ 
+
+body, body * {
+	vertical-align:baseline;
+	border:0 none;
+	outline:0;
+	padding:0;
+	margin:0;
+}
+
+#container{
+	position:absolute;
+	width:980px;
+	height:250px;
+	top:0px;
+	left:0px;
+	margin:auto;
+	background: #000;
+	overflow:hidden;
+}
+
+.exitBtn {
+	position: absolute;
+	top: 0px;
+	left:0px;
+	width:978px;
+	height:248px;
+	border:1px solid #2a7cb4;
+	z-index:700;
+	cursor: pointer;
+}
+
+#intro {
+    position: absolute;
+	top:0;
+	left:0;
+	width:980px;
+	height:250px;
+	background: #fff;
+	opacity:0;
+}
+
+#PS4_branding {
+	position:absolute;
+	width: 160px;
+	height:70px;
+	top:0px;
+	left:0px;
+	opacity: 1;
+	background: url('PS4_branding_TL.png');
+	z-index:100;
+}
+
+#PS4_Lozenge {
+	position:absolute;
+	width: 65px;
+	height:41px;
+	top:3px;
+	right:4px;
+	opacity: 1;
+	background: url('exclu.png');
+	z-index:100;
+}
+
+#rating_logo {
+	position:absolute;
+	width: 22px;
+	height:22px;
+	bottom:3px;
+	right:3px;
+	opacity: 1;
+	background-color:none;
+	background-image: url('rating_logo.png');
+	z-index:100;
+}
+
+#intro_flare {
+	position:absolute;
+	width: 444px;
+	height:123px;
+	bottom:85px;
+	left:-200px;
+	opacity: 0;
+	background: url('img_flare.png');
+	z-index:100;
+}
+
+#intro_flare_clank {
+	position:absolute;
+	width: 444px;
+	height:123px;
+	bottom:55px;
+	left:-450px;
+	opacity: 0;
+	background: url('img_flare.png');
+	z-index:100;
+}
+
+#intro_flare_tag {
+	position:absolute;
+	width: 444px;
+	height:123px;
+	bottom:70px;
+	left:-600px;
+	opacity: 0;
+	background: url('img_flare.png');
+	z-index:100;
+}
+
+#intro_ratchet_char {
+	position: absolute;
+	width: 209px;
+	height: 328px;
+	top: -20px;
+	right: -298px;
+	opacity: 0;
+	background: url('img_ratchet_char.png');
+	z-index: 110;
+}
+
+#intro_ratchet_name {
+	position: absolute;
+	width: 255px;
+	height: 48px;
+	top: 85px;
+	left: 510px;
+	opacity: 0;
+	background: url('img_ratchet_name.png');
+	z-index: 20;
+}
+
+#intro_clank_char {
+	position:absolute;
+	width: 207px;
+	height:215px;
+	top:80px;
+	left:-300px;
+	opacity: 0;
+	background: url('img_clank_char.png');
+	z-index:110;
+}
+
+#intro_clank_name {
+	position: absolute;
+	width: 266px;
+	height: 48px;
+	top: 135px;
+	left: 510px;
+	opacity: 0;
+	background: url('img_clank_name.png');
+	z-index: 20;
+}
+
+#intro_tagline_are {
+	position:absolute;
+	width: 427px;
+	height:72px;
+	top:80px;
+	left:290px;
+	opacity: 0;
+	background: url('img_tagline_areBack.png');
+	z-index:20;
+}
+
+#intro_tagline_April20 {
+	position: absolute;
+	width: 195px;
+	height: 45px;
+	right: 10px;
+	top: 140px;
+	left: 385px;
+	opacity: 0;
+	background: url('img_tagline_April20.png');
+	z-index: 20;
+}
+
+#intro_bg {
+	position:absolute;
+	width: 980px;
+	height:250px;
+	top:0px;
+	left:0px;
+	opacity: 1;
+	background: url('img_intro_bg.jpg');
+	z-index:10;
+}
+
+#resolve {
+    position: absolute;
+	top:0;
+	left:0;
+	width:980px;
+	height:250px;
+    opacity: 0;
+}
+
+#resolve_TT {
+	position:absolute;
+	width: 338px;
+	height:146px;
+	left: 360px;
+	top: 60px;
+	background: url('img_resolve_TT.png');
+	z-index:400;
+	opacity:0;
+}
+
+#resolve_date {
+	position: absolute;
+	width: 321px;
+	height: 56px;
+	right: -300px;
+	top: 112px;
+	z-index: 400;
+	opacity: 0;
+}
+
+#pack {
+	position:absolute;
+	width: 140px;
+	height:181px;
+	right: 115px;
+	bottom: 150px;
+	z-index:400;
+	background: url('pack.png');
+	opacity:0;
+}
+
+#resolve_legals {
+	position:absolute;
+	width: 195px;
+	height:8px;
+	left:380px;
+	bottom: 5px;
+	z-index:400;
+	opacity:0;
+}
+
+#resolve_april20 {
+	position: absolute;
+	width: 190px;
+	height: 25px;
+	right: -225px;
+	top: 159px;
+	background: url('img_resolve_April20.png');
+	z-index: 400;
+	opacity: 0;
+}
+
+#btn_resolve_cta_HIT {
+	position: absolute;
+	width: 173px;
+	height: 46px;
+	right: 95px;
+	bottom: 15px;
+	cursor: pointer;
+	z-index: 820;
+	opacity:0;
+}
+
+
+#btn_resolve_cta {
+	position: absolute;
+	width: 173px;
+	height: 46px;
+	right: 95px;
+	bottom: -70px;
+	background: url('btn_resolve_cta.png');
+	cursor: pointer;
+	z-index: 800;
+	opacity:0;
+}
+
+#btn_resolve_cta_hover {
+	position: absolute;
+	width: 173px;
+	height: 46px;
+	right: 95px;
+	bottom: -70px;
+	background: url('btn_resolve_cta.png');
+	background-position: bottom;
+	cursor: pointer;
+	z-index: 810;
+	opacity:0;
+}
+
+#resolve_bg {
+	position:absolute;
+	width: 980px;
+	height:250px;
+	top:0px;
+	right:0px;
+	opacity: 0;
+	background: url('img_resolve_bg.jpg');
+	z-index:10;
+}
