@@ -268,6 +268,7 @@ body {
           gwd.auto_VidbtnClick = function(event) {
             // GWD Predefined Function
             gwd.actions.gwdVideo.replay('tvc');
+            gwd.actions.gwdVideo.setVolume('tvc', 100);
           };
           gwd.auto_VideoEnded = function(event) {
             // GWD Predefined Function
@@ -326,7 +327,7 @@ body {
           <img is="gwd-image" source="buyitnow.png" id="text1" class="gwd-img-lq30">
           <img is="gwd-image" source="ondigitalHD.png" id="text2" class="gwd-img-1ysp">
           <gwd-taparea id="vidbtn" class="gwd-taparea-1j41"></gwd-taparea>
-          <video is="gwd-video" id="tvc" muted="" sources="X-Men_TVC.mp4" class="gwd-video-1v5b" autoplay=""></video>
+          <video is="gwd-video" id="tvc" muted="" controls="" sources="X-Men_TVC.mp4" class="gwd-video-1v5b" autoplay=""></video>
           <gwd-taparea id="exitbtn" class="gwd-taparea-8m4p"></gwd-taparea>
           <gwd-taparea id="exitbtn2" class="gwd-taparea-1r1c"></gwd-taparea>
           <img is="gwd-image" source="copyright_2.png" id="copyright" class="gwd-img-7lse">
