@@ -138,8 +138,16 @@ startResolve = function() {
 	TweenMax.to(resolve, 0.5, { opacity: 1});
     resolve.style.display = "block";
 	
+	//timer
+	TweenMax.to(resolve, 1, {delay:7, opacity: 1, onComplete: runRefresh});
 }
- 
+
+function runRefresh(){
+	setTimeout(doRefresh, 10);
+}
+function doRefresh(){
+		location.reload();
+}
 // ============= //
 // === Exits === //
 // ============= //
