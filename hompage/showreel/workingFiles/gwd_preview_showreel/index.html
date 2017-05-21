@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Google Web Designer 1.8.1.0510">
+  <meta name="template" content="Banner 3.0.0">
+  <meta name="environment" content="gwd-genericad">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="gwdpage_style.css" rel="stylesheet" data-version="8" data-exports-type="gwd-page">
+  <link href="gwdpagedeck_style.css" rel="stylesheet" data-version="9" data-exports-type="gwd-pagedeck">
+  <link href="gwdimage_style.css" rel="stylesheet" data-version="9" data-exports-type="gwd-image">
+  <link href="gwdvideo_style.css" rel="stylesheet" data-version="8" data-exports-type="gwd-video">
+  <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox {
+    overflow: hidden;
+    border: 1px dashed rgb(160, 160, 160);
+}</style>
+  <style type="text/css" id="gwd-text-style">p {
+    margin: 0px;
+}
+h1 {
+    margin: 0px;
+}
+h2 {
+    margin: 0px;
+}
+h3 {
+    margin: 0px;
+}</style>
+  <style type="text/css">html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.gwd-page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.gwd-page-content {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    perspective: 1400px;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    position: absolute;
+    background-color: transparent;
+}
+.gwd-page-wrapper {
+    position: absolute;
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    -moz-transform: translateZ(0px);
+    background-color: rgb(255, 255, 255);
+}
+.gwd-page-size {
+    width: 1024px;
+    height: 576px;
+}
+.gwd-video-1nlp {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 576px;
+    width: 1024px;
+}
+.gwd-img-1sgp {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 949px;
+    top: 504px;
+}
+.gwd-img-2cx6 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 949px;
+    top: 504px;
+}</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script><script data-source="googbase_min.js" data-version="3" data-exports-type="googbase" src="googbase_min.js"></script><script data-source="gwd_webcomponents_min.js" data-version="5" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
+  <script data-source="gwdpage_min.js" data-version="8" data-exports-type="gwd-page" src="gwdpage_min.js"></script><script data-source="gwdpagedeck_min.js" data-version="9" data-exports-type="gwd-pagedeck" src="gwdpagedeck_min.js"></script><script data-source="gwdgenericad_min.js" data-version="4" data-exports-type="gwd-genericad" src="gwdgenericad_min.js"></script>
+    <script data-source="gwdimage_min.js" data-version="9" data-exports-type="gwd-image" src="gwdimage_min.js"></script><script data-source="gwdvideo_min.js" data-version="8" data-exports-type="gwd-video" src="gwdvideo_min.js"></script>
+      <script type="text/javascript" gwd-events="support" src="gwd-events-support.1.0.js"></script>
+      <script type="text/javascript" gwd-events="handlers">
+        window.gwd = window.gwd || {};
+        gwd.auto_UnMClick = function(event) {
+          // GWD Predefined Function
+          gwd.actions.gwdVideo.setVolume('VIDEO', 100);
+          TweenMax.set(unM, {
+            display: 'none'
+          });
+          TweenMax.set(M, {
+            display: ''
+          });
+        };
+        gwd.auto_MClick = function(event) {
+          // GWD Predefined Function
+          gwd.actions.gwdVideo.setVolume('VIDEO', 0);
+          TweenMax.set(unM, {
+            display: ''
+          });
+          TweenMax.set(M, {
+            display: 'none'
+          });
+        };
+        gwd.btn_over = function(event) {
+          TweenMax.to(this, 0.3, {
+            scale: 1.2
+          });
+        };
+        gwd.btn_out = function(event) {
+          TweenMax.to(this, 0.3, {
+            scale: 1,
+            ease: Back.easeOut.config(4),
+          });
+        };
+      </script>
+      <script type="text/javascript" gwd-events="registration">
+        // Support code for event handling in Google Web Designer
+         // This script block is auto-generated. Please do not edit!
+        gwd.actions.events.registerEventHandlers = function(event) {
+          gwd.actions.events.addHandler('unM', 'click', gwd.auto_UnMClick, false);
+          gwd.actions.events.addHandler('M', 'click', gwd.auto_MClick, false);
+          gwd.actions.events.addHandler('unM', 'mouseover', gwd.btn_over, false);
+          gwd.actions.events.addHandler('unM', 'mouseout', gwd.btn_out, false);
+          gwd.actions.events.addHandler('M', 'mouseover', gwd.btn_over, false);
+          gwd.actions.events.addHandler('M', 'mouseout', gwd.btn_out, false);
+        };
+        gwd.actions.events.deregisterEventHandlers = function(event) {
+          gwd.actions.events.removeHandler('unM', 'click', gwd.auto_UnMClick, false);
+          gwd.actions.events.removeHandler('M', 'click', gwd.auto_MClick, false);
+          gwd.actions.events.removeHandler('unM', 'mouseover', gwd.btn_over, false);
+          gwd.actions.events.removeHandler('unM', 'mouseout', gwd.btn_out, false);
+          gwd.actions.events.removeHandler('unM', 'mouseover', gwd.btn_over, false);
+          gwd.actions.events.removeHandler('unM', 'mouseout', gwd.btn_out, false);
+        };
+        document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
+        document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
+      </script>
+</head>
+
+<body>
+  <gwd-genericad id="gwd-ad">
+    <div is="gwd-pagedeck" class="gwd-page-container" id="pagedeck">
+      <div is="gwd-page" id="page1" class="gwd-page-wrapper gwd-page-size gwd-lightbox" data-gwd-width="1024px" data-gwd-height="576px">
+        <div class="gwd-page-content gwd-page-size">
+          <video is="gwd-video" id="VIDEO" muted="" sources="SHOWREEL_2017_576.mp4" class="gwd-video-1nlp" loop="" autoplay=""></video>
+          <img is="gwd-image" source="mute_icon.png" id="M" class="gwd-img-1sgp">
+          <img is="gwd-image" source="unmute_icon.png" id="unM" class="gwd-img-2cx6">
+        </div>
+      </div>
+    </div>
+  </gwd-genericad>
+  <script type="text/javascript" id="gwd-init-code">
+    (function() {
+      var gwdAd = document.getElementById('gwd-ad');
+
+      /**
+       * Handles the DOMContentLoaded event. The DOMContentLoaded event is
+       * fired when the document has been completely loaded and parsed.
+       */
+      function handleDomContentLoaded(event) {
+
+      }
+
+      /**
+       * Handles the WebComponentsReady event. This event is fired when all
+       * custom elements have been registered and upgraded.
+       */
+      function handleWebComponentsReady(event) {
+        // Start the Ad lifecycle.
+        setTimeout(function() {
+          gwdAd.initAd();
+        }, 0);
+      }
+
+      /**
+       * Handles the event that is dispatched after the Ad has been
+       * initialized and before the default page of the Ad is shown.
+       */
+      function handleAdInitialized(event) {}
+
+      window.addEventListener('DOMContentLoaded',
+        handleDomContentLoaded, false);
+      window.addEventListener('WebComponentsReady',
+        handleWebComponentsReady, false);
+      window.addEventListener('adinitialized',
+        handleAdInitialized, false);
+      TweenMax.set(M, {
+        display: 'none'
+      });
+    })();
+  </script>
+
+
+</body></html>
